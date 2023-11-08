@@ -31,7 +31,7 @@ int main() {
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    GLFWwindow* window = glfwCreateWindow(800, 600, "Ya me cansé", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(800, 600, "Cuadrado Negro Movido hacia Arriba", NULL, NULL);
     if (window == NULL) {
         std::cout << "Error al crear la ventana GLFW" << std::endl;
         glfwTerminate();
@@ -102,21 +102,21 @@ int main() {
     float vertices[] = {     // rectángulo:
         -0.1f, -0.25f, 0.0f, // abajo izquierda 
          0.1f, -0.25f, 0.0f, // abajo derecha
-         0.1f,  0.25f, 0.0f, // arriba izquierda
-        -0.1f,  0.25f, 0.0f, // arriba derecha
+         0.1f,  0.25f, 0.0f, // arriba derecha
+        -0.1f,  0.25f, 0.0f, // arriba izquierda
 
                              // cuadrado negro:
         -0.2f, 0.1f, 0.0f, // abajo izquierda 
-         -0.1f, 0.1f, 0.0f, // abajo derecha
-        -0.2f,  0.2f, 0.0f, // arriba izquierda
-         -0.1f,  0.2f, 0.0f  // arriba derecha
+        -0.1f, 0.1f, 0.0f, // abajo derecha
+        -0.1f, 0.2f, 0.0f, // arriba derecha
+        -0.2f, 0.2f, 0.0f  // arriba izquierda
     };
 
     unsigned int indices[] = {
         0, 1, 2,
         2, 3, 0,
-        4, 5, 6, // Índices del cuadrado negro
-        6, 7, 4
+        4, 5, 6, // Primer triángulo del cuadrado negro
+        6, 7, 4  // Segundo triángulo del cuadrado negro
     };
 
     unsigned int VBO, VAO, EBO;
